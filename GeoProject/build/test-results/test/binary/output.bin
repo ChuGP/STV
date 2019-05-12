@@ -1,0 +1,5 @@
+?java.lang.IllegalArgumentException: not a base32 character: a
+?java.lang.IllegalArgumentException: not a base32 character: a
+?java.lang.IllegalArgumentException: not a base32 character: a
+ pjava.lang.IllegalArgumentException: adjacent has no meaning for a zero length hash that covers the whole world
+',"java.util.NoSuchElementException

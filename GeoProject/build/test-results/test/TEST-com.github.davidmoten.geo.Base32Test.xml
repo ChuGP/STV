@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.davidmoten.geo.Base32Test" tests="4" skipped="0" failures="0" errors="0" timestamp="2019-04-24T12:36:02" hostname="DESKTOP-V5JPTA4" time="0.018">
+  <properties/>
+  <testcase name="encodeBase32" classname="com.github.davidmoten.geo.Base32Test" time="0.013"/>
+  <testcase name="padLeftWithZerosToLength" classname="com.github.davidmoten.geo.Base32Test" time="0.0"/>
+  <testcase name="getCharIndex" classname="com.github.davidmoten.geo.Base32Test" time="0.001"/>
+  <testcase name="decodeBase32" classname="com.github.davidmoten.geo.Base32Test" time="0.002"/>
+  <system-out><![CDATA[java.lang.IllegalArgumentException: not a base32 character: a
+java.lang.IllegalArgumentException: not a base32 character: a
+java.lang.IllegalArgumentException: not a base32 character: a
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

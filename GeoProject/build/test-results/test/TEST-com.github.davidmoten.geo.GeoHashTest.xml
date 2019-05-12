@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.github.davidmoten.geo.GeoHashTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2019-04-24T12:36:02" hostname="DESKTOP-V5JPTA4" time="0.259">
+  <properties/>
+  <testcase name="coverBoundingBoxLongs" classname="com.github.davidmoten.geo.GeoHashTest" time="0.045"/>
+  <testcase name="bottom" classname="com.github.davidmoten.geo.GeoHashTest" time="0.003"/>
+  <testcase name="decodeHash" classname="com.github.davidmoten.geo.GeoHashTest" time="0.024"/>
+  <testcase name="encodeHashToLong" classname="com.github.davidmoten.geo.GeoHashTest" time="0.001"/>
+  <testcase name="hashLengthToCoverBoundingBox" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <testcase name="encodeHash" classname="com.github.davidmoten.geo.GeoHashTest" time="0.001"/>
+  <testcase name="coverBoundingBox" classname="com.github.davidmoten.geo.GeoHashTest" time="0.169"/>
+  <testcase name="coverBoundingBoxMaxHashes" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <testcase name="top" classname="com.github.davidmoten.geo.GeoHashTest" time="0.001"/>
+  <testcase name="left" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <testcase name="right" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <testcase name="neighbours" classname="com.github.davidmoten.geo.GeoHashTest" time="0.001"/>
+  <testcase name="widthDegrees" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <testcase name="adjacentHash" classname="com.github.davidmoten.geo.GeoHashTest" time="0.001"/>
+  <testcase name="heightDegrees" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <testcase name="hashContains" classname="com.github.davidmoten.geo.GeoHashTest" time="0.001"/>
+  <testcase name="fromLongToString" classname="com.github.davidmoten.geo.GeoHashTest" time="0.0"/>
+  <system-out><![CDATA[java.lang.IllegalArgumentException: adjacent has no meaning for a zero length hash that covers the whole world
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
