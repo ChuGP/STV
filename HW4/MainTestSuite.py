@@ -19,5 +19,5 @@ if __name__=="__main__":
     suite.addTests(test2)
     suite.addTests(test3)
     suite.addTests(test4)
-    # suite.addTests(test5)
+    suite.addTests(test5)
     unittest.TextTestRunner(verbosity=2).run(suite)

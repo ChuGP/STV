@@ -25,6 +25,7 @@ def create_post( _driver, text ):
     get_web_element( _driver, '//button[contains(normalize-space(), "Create")]' ).click() 
     get_web_element( _driver, '//*[contains(@class,"FormField__inner field-size-full")]//input' ).send_keys(text)
     get_web_element( _driver, '//*[normalize-space() = "Create"]' ).click()
+    get_web_element( _driver, '//*[contains( @data-button , "update") ]' ).click()
 
 def open_dropdown_list( _driver, field ):
     get_web_element( _driver, '//*[contains( @for, "%s") ]//*[contains( @class,"Select-arrow-zone") ]' %field ).click()

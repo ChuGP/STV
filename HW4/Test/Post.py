@@ -171,7 +171,7 @@ def clear_text_field(_driver,field):
     get_web_element( _driver, '//*[contains( @for,"%s") ]//*[contains(@type, "text")]' %field ).send_keys( Keys.BACKSPACE )
 
 def input_published_date_field(_driver):
-    day = str(random.randint(1,31)).zfill(2)
+    day = str(random.randint(1,30)).zfill(2)
     text = ('2019-05-"%s"' %(day))
     get_web_element( _driver, '//*[contains( @for,"publishedDate") ]//*[contains(@type, "text")]' ).send_keys( text )
     return day,text

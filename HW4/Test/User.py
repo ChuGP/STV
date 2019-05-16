@@ -42,7 +42,7 @@ class test_user(unittest.TestCase):  # 測試項目
         
         get_web_element( test, '//button[contains(@type, "submit") and contains(normalize-space(), "Create")]' ).click() 
         
-
+        input_field( test, 'phone', "035824384" )
         input_field( test, 'phone', "0962010830" )
         get_web_element( test, '//*[contains( @data-button , "update") ]' ).click()
         top_tab_go_to_page( test, 'users' )

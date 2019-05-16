@@ -18,15 +18,15 @@ class test_comment(unittest.TestCase):  # 測試項目
         # precondition create post
         get_web_element( test, '//button[contains(normalize-space(), "Create")]' ).click() 
         select_comment_dropdown_field( test, 'author', 'Demo User')
-        time.sleep(3) # web Bug!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! if no sleep web will fail
-        select_comment_dropdown_field( test, 'post', 'I AM GP')
-        time.sleep(3)  # web Bug!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! if no sleep web will fail
-        get_web_element( test, '//*[normalize-space() = "Create"]' ).click()
-        time.sleep(1)
-        # get_web_element( test, '//*[contains(@aria-label , "Source code")]' )
+        if ( is_text_present( test, 'Demo User' ) ):
+          select_comment_dropdown_field( test, 'post', 'I AM GP')
+        else : select_comment_dropdown_field( test, 'author', 'Demo User')
+
+        if ( is_text_present( test, 'I AM GP' ) ):
+          get_web_element( test, '//*[normalize-space() = "Create"]' ).click()
+        else : select_comment_dropdown_field( test, 'post', 'I AM GP')
         # create comment
         if ( is_text_present( test, 'Demo User' ) ):
-            # get_web_element( test, '//*[contains(@data-button,"update")]' ).click()
             authorText = get_select_dropdown_text( test, 'author' )
             self.assertEqual( authorText, 'Demo User' )
             authorText = get_select_dropdown_text( test, 'post' )

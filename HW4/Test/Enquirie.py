@@ -20,6 +20,7 @@ class test_enquire(unittest.TestCase):  # 測試項目
         # precondition
         input_field( test, 'name', "GP" )
         input_field( test, 'email', "a5824384@gmail.com" )
+        input_field( test, 'phone', "035824384" )
         input_field( test, 'phone', "0962010830" )
         select_contact_dropdown_field( test, 'Just leaving a message' )
         exist = is_text_present( test, 'Just leaving a message' )
@@ -30,8 +31,10 @@ class test_enquire(unittest.TestCase):  # 測試項目
         select_contact_dropdown_field( test, 'Something else...' )
         exist = is_text_present( test, 'Something else...' )
         self.assertTrue( exist )
-
-        input_text_area( test, 'message', 'EDIT TEST!!!' )
+        input_text_area( test, 'message', '!@#$%' )
+        input_text_area( test, 'message', '12345' )
+        input_text_area( test, 'message', 'Test1' )
+        input_text_area( test, 'message', 'EDIT TEST' )
         submit( test )
         
         success = get_web_element( test, '//*[normalize-space() = "Success!"]' ).text
