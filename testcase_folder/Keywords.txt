@@ -1,0 +1,63 @@
+*** Setting ***
+Library    AppiumLibrary
+Library    BuiltIn
+
+*** Keywords ***
+On The Calendar Page
+    log    ${CURDIR}${/}ContactManager.apk
+    Open Application    http://localhost:4723/wd/hub    platformName=Android    platformVersion=9    deviceName=UBV7N18405000195
+    ...    appPackage=info.kfsoft.calendar    appActivity=MainActivity    noReset=true
+
+Click Element After Visible
+    [Arguments]    ${locator}
+    Wait Until Page Contains Element    ${locator}    timeout=3
+    Wait Until Element Is Visible    ${locator}    timeout=3
+    Click Element    ${locator}
+
+Input Text After Visible
+    [Arguments]    ${locator}    ${text}
+    Wait Until Page Contains Element    ${locator}    timeout=3
+    Wait Until Element Is Visible    ${locator}    timeout=3
+    Input Text    ${locator}    ${text}
+
+Get Text After Visible
+    [Arguments]    ${locator}
+    Wait Until Element Is Visible    ${locator}    timeout=3
+    ${activityName} =    Get Text    ${locator}
+    [Return]    ${activityName}
+
+Change Mode
+    [Arguments]    ${mode}
+    Click Element After Visible    xpath=//android.widget.Spinner
+    Click Element After Visible    xpath=//android.widget.TextView[@text='${mode}']
+
+Select Month
+    [Arguments]    ${month}
+    Click Element After Visible    xpath=(//*[contains(@resource-id,'gridview')])[${month}]
+
+Select Day
+    [Arguments]    ${day}
+    Click Element After Visible    xpath=//android.widget.TextView[@text='${day}']
+
+Enter More Options
+    [Arguments]    ${option}
+    Click Element After Visible    xpath=//android.widget.ImageView[@content-desc='更多選項']
+    Click Element After Visible    xpath=//android.widget.TextView[@text='${option}']
+
+Delete Activity
+    [Arguments]    ${date}    ${name}
+    Click Element After Visible    xpath=//android.widget.TextView[@text='${date}']
+    Click Element After Visible    xpath=//android.widget.TextView[contains(@resource-id,'txtContent') and contains(@text,'${name}')]
+    Click Element After Visible    xpath=//android.widget.TextView[contains(@resource-id,'action_remove')]
+    Click Element After Visible    xpath=//android.widget.Button[@text='確定']
+    Click Element After Visible    xpath=//android.widget.TextView[@text='${date}']
+    Page Should Not Contain Element    xpath=//android.widget.TextView[contains(@resource-id,'txtContent') and contains(@text,'${name}')]
+
+Create Activity
+    [Arguments]    ${activityName}
+    Click Element After Visible    xpath=//android.widget.TextView[@text='15']
+    Click Element After Visible    xpath=//android.widget.TextView[contains(@resource-id,'action_add')]
+    Input Text After Visible    xpath=//android.widget.EditText[@text='活動名稱']       ${activityName}
+    Click Element After Visible    xpath=//android.widget.Button[contains(@resource-id,'btnOk')]
+    ${actualName} =    Get Text After Visible    xpath=//android.widget.TextView[@text='15']/..//*[contains(@text,'${activityName}')]
+    Should Be Equal    ${actualName}    ${activityName}
